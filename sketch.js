@@ -37,7 +37,7 @@ function preload(){
   stick2 = loadImage('stick2.png');
   snowybackground = loadImage('snowybackground.png');
 
-  song = loadSound('Frosty the Snowman.mp4');
+  song = loadSound('Frosty the Snowman.mp3');
 
 }
 function setup() {
