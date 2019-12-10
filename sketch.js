@@ -17,6 +17,7 @@ let santahat;
 let greenredscarf;
 let stick1;
 let stick2;
+let song;
 
 let snowybackground;
 
@@ -36,57 +37,69 @@ function preload(){
   stick2 = loadImage('stick2.png');
   snowybackground = loadImage('snowybackground.png');
 
+  song = loadSound('Frosty the Snowman.mp3');
+
 }
 function setup() {
-  createCanvas(500, 500);
-
-  purpleX = 260;
+  createCanvas(600, 500);
+  song.loop();
+  purpleX = 360;
   purpleY = 30;
-  greenX = 370;
+  greenX = 470;
   greenY = 30;
-  redtopX = 415;
-  redtopY = 355;
-  blacktopX = 255;
-  blacktopY = 350;
-  carrotX = 340;
-  carrotY = 435;
-  santaX = 330;
-  santaY = 350;
-  greenredX = 375;
-  greenredY = 235;
-  stick1X = 255;
+  redtopX = 480;
+  redtopY = 240;
+  blacktopX = 350;
+  blacktopY = 235;
+  carrotX = 420;
+  carrotY = 420;
+  santaX = 400;
+  santaY = 310;
+  greenredX = 340;
+  greenredY = 90;
+  stick1X = 355;
   stick1Y = 400;
-  stick2X = 400;
+  stick2X = 500;
   stick2Y = 400;
 }
 
 function draw() {
   background(30, 144, 255);
-  rect(250, 0, 500, 500);
+  rect(350, 0, 500, 500);
 
-  image(snowybackground, 0, 410, snowybackground.width / 24, snowybackground.height/ 25);
+  image(snowybackground, 0, 410, snowybackground.width / 17.15, snowybackground.height/ 25);
 
-  ellipse(130, 410, 150, 150);
-  ellipse(130, 300, 130, 130);
-  ellipse(130, 210, 110, 110);
+  ellipse(180, 410, 150, 150);
+  ellipse(180, 300, 130, 130);
+  ellipse(180, 210, 100, 100);
 
   push();
   fill(0);
-  ellipse(130,390,25,25);
-  ellipse(130,280,25,25);
-  ellipse(130,330,25,25);
+  ellipse(180,390,25,25);
+  ellipse(180,280,25,25);
+  ellipse(180,330,25,25);
+
+  ellipse(160,190,15,15);
+  ellipse(200,190,15,15);
+
+  ellipse(150,220,13,13);
+  ellipse(165,230,13,13);
+  ellipse(190,230,13,13);
+  ellipse(210,220,13,13);
   pop();
+
+
 
   image(purplescarf, purpleX, purpleY, purplescarf.width / 4, purplescarf.height / 4);
 
     image(greenscarf, greenX, greenY, greenscarf.width / 4, greenscarf.height / 4);
 
-  image(redtophat, redtopX, redtopY, redtophat.width / 15, redtophat.height / 15);
+  image(redtophat, redtopX, redtopY, redtophat.width / 10, redtophat.height / 10);
 
-  image(blacktophat, blacktopX, blacktopY, blacktophat.width / 28, blacktophat.height / 28);
-  image(carrot, carrotX, carrotY, carrot.height / 2, carrot.width / 2);
-  image(santahat, santaX, santaY, santahat.width / 2, santahat.height / 2);
-  image(greenredscarf, greenredX, greenredY);
+  image(blacktophat, blacktopX, blacktopY, blacktophat.width / 18, blacktophat.height / 18);
+  image(carrot, carrotX, carrotY, 100, 100);
+  image(santahat, santaX, santaY, 150, 150);
+  image(greenredscarf, greenredX, greenredY, 210,200);
   image(stick1, stick1X, stick1Y, stick1.width / 25, stick1.height / 25);
   image(stick2, stick2X, stick2Y, stick2.width / 25, stick2.height / 25);
 
@@ -140,14 +153,14 @@ function mousePressed() {
     offsetX2 = greenX-mouseX;
     offsetY2 = greenY-mouseY;
   }
-    if (mouseX > redtopX && mouseX < redtopX + 100 && mouseY > redtopY && mouseY < redtopY + 100) {
+    if (mouseX > redtopX && mouseX < redtopX + 75 && mouseY > redtopY && mouseY < redtopY + 75) {
     redtopdragging = true;
 
     offsetX3 = redtopX-mouseX;
     offsetY3 = redtopY-mouseY;
   }
 
-      if (mouseX > blacktopX && mouseX < blacktopX + 100 && mouseY > blacktopY && mouseY < blacktopY + 100) {
+      if (mouseX > blacktopX && mouseX < blacktopX + 75 && mouseY > blacktopY && mouseY < blacktopY + 75) {
     blacktopdragging = true;
 
     offsetX4 = blacktopX-mouseX;
@@ -165,19 +178,19 @@ function mousePressed() {
     offsetX5 = santaX-mouseX;
     offsetY5 = santaY-mouseY;
   }
-      if (mouseX > greenredX && mouseX < greenredX + 100 && mouseY > greenredY && mouseY < greenredY + 100) {
+      if (mouseX > greenredX && mouseX < greenredX + 199 && mouseY > greenredY && mouseY < greenredY + 200) {
     greenreddragging = true;
 
     offsetX7 = greenredX-mouseX;
     offsetY7 = greenredY-mouseY;
   }
-      if (mouseX > stick1X && mouseX < stick1X + 100 && mouseY > stick1Y && mouseY < stick1Y + 100) {
+      if (mouseX > stick1X && mouseX < stick1X + stick1.width / 25 && mouseY > stick1Y && mouseY < stick1Y + stick1.height / 25) {
     stick1dragging = true;
 
     offsetX8 = stick1X-mouseX;
     offsetY8 = stick1Y-mouseY;
   }
-      if (mouseX > stick2X && mouseX < stick2X + 100 && mouseY > stick2Y && mouseY < stick2Y + 100) {
+      if (mouseX > stick2X && mouseX < stick2X + stick2.width / 25 && mouseY > stick2Y && mouseY < stick2Y + stick2.height / 25) {
     stick2dragging = true;
 
     offsetX9 = stick2X-mouseX;
