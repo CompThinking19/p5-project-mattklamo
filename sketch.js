@@ -37,7 +37,7 @@ function preload(){
   stick2 = loadImage('stick2.png');
   snowybackground = loadImage('snowybackground.png');
 
-  song = loadSound('Frosty the Snowman.mp3');
+  song = loadSound('Frosty the Snowman.mp4');
 
 }
 function setup() {
@@ -67,7 +67,7 @@ function draw() {
   background(30, 144, 255);
   rect(350, 0, 500, 500);
 
-  image(snowybackground, 0, 410, snowybackground.width / 17.15, snowybackground.height/ 25);
+  image(snowybackground, 0, 400, 350, 100);
 
   ellipse(180, 410, 150, 150);
   ellipse(180, 300, 130, 130);
