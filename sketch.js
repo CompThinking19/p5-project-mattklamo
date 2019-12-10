@@ -37,12 +37,12 @@ function preload(){
   stick2 = loadImage('stick2.png');
   snowybackground = loadImage('snowybackground.png');
 
-  song = loadSound('Frosty the Snowman.mp3');
+
 
 }
 function setup() {
   createCanvas(600, 500);
-  song.loop();
+
   purpleX = 360;
   purpleY = 30;
   greenX = 470;
